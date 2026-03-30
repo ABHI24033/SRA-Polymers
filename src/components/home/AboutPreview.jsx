@@ -18,7 +18,8 @@ const AboutPreview = () => {
                             className="relative rounded-[2.5rem] overflow-hidden shadow-2xl z-10"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1625246333195-bf404ec970z?q=80&w=1000&auto=format&fit=crop"
+                                // src="https://images.unsplash.com/photo-1625246333195-bf404ec970z?q=80&w=1000&auto=format&fit=crop"
+                                src="/farmers.jpg"
                                 alt="SRA Polymers Innovation"
                                 className="w-full h-auto object-cover aspect-[4/5]"
                             />

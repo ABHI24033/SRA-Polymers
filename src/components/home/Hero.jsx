@@ -53,12 +53,12 @@ const Hero = () => {
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </LinkButton>
 
-                            <button className="flex items-center justify-center space-x-3 text-white font-bold hover:text-emerald-400 transition-colors group">
+                            {/* <button className="flex items-center justify-center space-x-3 text-white font-bold hover:text-emerald-400 transition-colors group">
                                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all duration-300">
                                     <Play className="w-5 h-5 fill-current ml-1" />
                                 </div>
                                 <span>Watch Our Story</span>
-                            </button>
+                            </button> */}
                         </div>
 
                         {/* Trusted By / Quick Stats */}
@@ -87,6 +87,7 @@ const Hero = () => {
                         <div className="relative z-10 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <img
                                 src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1000&auto=format&fit=crop"
+                                // src="/sprinkler_prod.jpeg"
                                 alt="Smart Agriculture"
                                 className="w-full aspect-square object-cover"
                             />

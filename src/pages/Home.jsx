@@ -21,9 +21,9 @@ const Home = () => {
             <Features />
             <Testimonials />
 
-            <div className="py-24 bg-emerald-50/50">
+            {/* <div className="py-24 bg-emerald-50/50">
                 <ServicesPreview />
-            </div>
+            </div> */}
 
             <ContactCTA />
         </div>

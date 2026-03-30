@@ -36,19 +36,19 @@ const Navbar = () => {
                 <div className="bg-emerald-900/10 backdrop-blur-sm border-b border-white/10 text-white/90 py-2 hidden lg:block">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs font-medium tracking-wide">
                         <div className="flex items-center space-x-6">
-                            <a href="tel:+911234567890" className="flex items-center space-x-2 hover:text-emerald-400 transition-colors">
+                            <a href="tel:+919304031185" className="flex items-center space-x-2 hover:text-emerald-400 transition-colors">
                                 <Phone size={14} className="text-emerald-500" />
-                                <span>+91 123 456 7890</span>
+                                <span>+91 9304031185</span>
                             </a>
-                            <a href="mailto:info@agritech.com" className="flex items-center space-x-2 hover:text-emerald-400 transition-colors">
+                            <a href="mailto:info.srapolymer@gmail.com" className="flex items-center space-x-2 hover:text-emerald-400 transition-colors">
                                 <Mail size={14} className="text-emerald-500" />
-                                <span>info@agritech.com</span>
+                                <span>info.srapolymer@gmail.com</span>
                             </a>
                         </div>
                         <div className="flex items-center space-x-4">
                             <div className="flex items-center space-x-2">
                                 <MapPin size={14} className="text-emerald-500" />
-                                <span>Industrial Area, City, State</span>
+                                <span>Simalya, Near Dhoni Farm House, Ring Road Ranchi</span>
                             </div>
                         </div>
                     </div>
