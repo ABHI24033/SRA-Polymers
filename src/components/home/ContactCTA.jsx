@@ -63,7 +63,7 @@ const ContactCTA = () => {
                             </Link>
 
                             <a
-                                href="mailto:support@agritech.com"
+                                href="mailto:info.srapolymer@gmail.com"
                                 className="w-full sm:w-auto px-10 py-5 bg-emerald-900 border border-emerald-800 text-white font-black rounded-2xl hover:bg-emerald-800 transition-all flex items-center justify-center"
                             >
                                 Direct Support

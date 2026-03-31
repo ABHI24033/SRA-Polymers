@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Play } from 'lucide-react';
+import { Navigate } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -48,10 +49,10 @@ const Hero = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                            <LinkButton to="/contact" primary>
+                            {/* <LinkButton to="/contact" primary>
                                 Get a Free Quote
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </LinkButton>
+                            </LinkButton> */}
 
                             {/* <button className="flex items-center justify-center space-x-3 text-white font-bold hover:text-emerald-400 transition-colors group">
                                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all duration-300">
@@ -112,6 +113,7 @@ const Hero = () => {
 
 const LinkButton = ({ to, children, primary }) => (
     <button
+        onClick={Navigate(to)}
         className={`group px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-300 flex items-center justify-center shadow-lg hover:-translate-y-1 active:translate-y-0 ${primary
             ? "bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-emerald-900/40 hover:shadow-emerald-900/60"
             : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"

@@ -1,8 +1,57 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageSquare, Clock, Globe } from 'lucide-react';
+import { toast } from 'sonner';
+import { getZeptoContactRecipient, sendZeptoMail } from '../lib/zeptoMail';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: 'Product Inquiry',
+        message: '',
+    });
+    const [isSending, setIsSending] = useState(false);
+
+    const recipient = useMemo(() => getZeptoContactRecipient(), []);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setIsSending(true);
+        try {
+            const htmlbody = `
+                <div style="font-family: Arial, sans-serif; color: #0f172a;">
+                    <h2 style="color:#047857;margin-bottom:16px;">New Contact Inquiry</h2>
+                    <p><strong>Name:</strong> ${formData.name}</p>
+                    <p><strong>Email:</strong> ${formData.email}</p>
+                    <p><strong>Topic:</strong> ${formData.subject}</p>
+                    <p style="margin-top:16px;"><strong>Message:</strong></p>
+                    <p style="white-space:pre-line;">${formData.message}</p>
+                </div>
+            `;
+
+            await sendZeptoMail({
+                subject: `[Website Contact] ${formData.subject} - ${formData.name}`,
+                htmlbody,
+                to: [recipient],
+                replyTo: { address: formData.email, name: formData.name },
+            });
+
+            toast.success('Thanks! Your message was sent.');
+            setFormData({ name: '', email: '', subject: 'Product Inquiry', message: '' });
+        } catch (error) {
+            console.error(error);
+            toast.error('We could not send your message right now.');
+        } finally {
+            setIsSending(false);
+        }
+    };
+
     return (
         <div className="bg-white min-h-screen">
             {/* Header Section */}
@@ -104,7 +153,7 @@ const Contact = () => {
                                         <h2 className="text-2xl font-black text-slate-900">Send us a Message</h2>
                                     </div>
 
-                                    <form className="space-y-6">
+                                    <form className="space-y-6" onSubmit={handleSubmit}>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-black text-slate-900 uppercase tracking-widest">Full Name</label>
@@ -112,6 +161,10 @@ const Contact = () => {
                                                     type="text"
                                                     placeholder="John Doe"
                                                     className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-medium"
+                                                    name="name"
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                    required
                                                 />
                                             </div>
                                             <div className="space-y-2">
@@ -120,17 +173,26 @@ const Contact = () => {
                                                     type="email"
                                                     placeholder="john@example.com"
                                                     className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-medium"
+                                                    name="email"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    required
                                                 />
                                             </div>
                                         </div>
 
                                         <div className="space-y-2">
                                             <label className="text-sm font-black text-slate-900 uppercase tracking-widest">Subject</label>
-                                            <select className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-medium appearance-none">
-                                                <option>Product Inquiry</option>
-                                                <option>Custom Formulation</option>
-                                                <option>Partnership</option>
-                                                <option>Technical Support</option>
+                                            <select
+                                                className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-medium appearance-none"
+                                                name="subject"
+                                                value={formData.subject}
+                                                onChange={handleChange}
+                                            >
+                                                <option value="Product Inquiry">Product Inquiry</option>
+                                                <option value="Custom Formulation">Custom Formulation</option>
+                                                <option value="Partnership">Partnership</option>
+                                                <option value="Technical Support">Technical Support</option>
                                             </select>
                                         </div>
 
@@ -140,11 +202,19 @@ const Contact = () => {
                                                 rows="5"
                                                 placeholder="Describe your requirements..."
                                                 className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-medium resize-none"
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                required
                                             ></textarea>
                                         </div>
 
-                                        <button className="w-full group bg-emerald-900 text-white font-black py-5 rounded-2xl hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-950/20 flex items-center justify-center space-x-3 hover:-translate-y-1">
-                                            <span>Send Inquiry</span>
+                                        <button
+                                            type="submit"
+                                            disabled={isSending}
+                                            className="w-full group bg-emerald-900 text-white font-black py-5 rounded-2xl hover:bg-emerald-600 transition-all shadow-xl shadow-emerald-950/20 flex items-center justify-center space-x-3 hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-70"
+                                        >
+                                            <span>{isSending ? 'Sending…' : 'Send Inquiry'}</span>
                                             <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                         </button>
                                     </form>

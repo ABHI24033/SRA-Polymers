@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { ArrowLeft, ArrowRight, LoaderCircle, Send } from 'lucide-react';
@@ -20,12 +19,7 @@ import {
 } from './distributorFormConfig';
 import { FileUploadField, FormField, Stepper } from './DistributorFormParts';
 import { cn } from '../../lib/utils';
-
-const emailJsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_9ca3u46',
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_9lpi9ha',
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'hiIpzentX9ktO7DA5',
-};
+import { getZeptoContactRecipient, sendZeptoMail } from '../../lib/zeptoMail';
 
 const fieldClassName = (hasError) =>
   cn(hasError && 'border-rose-300 focus-visible:ring-rose-500/20');
@@ -64,48 +58,45 @@ const DistributorForm = () => {
   const previousStep = () => setCurrentStep((step) => Math.max(step - 1, 0));
 
   const onSubmit = async (values) => {
-    await emailjs.send(
-      emailJsConfig.serviceId,
-      emailJsConfig.templateId,
-      {
-        to_email: 'abhishek24033c@gmail.com',
-        subject: `New Distributor Registration - ${values.name}`,
-        name: values.name,
-        address: values.address,
-        city: values.city,
-        district: values.district,
-        state: values.state,
-        pincode: values.pinCode,
-        mobile: values.mobileNo,
-        whatsapp: values.whatsappNo,
-        email: values.emailId,
-        corporateStatus: values.corporateStatus,
-        director: values.managingDirector,
-        partners: values.workingPartners,
-        warehouseAddress: values.warehouseAddress,
-        warehouseSize: values.warehouseArea,
-        salesStaff: values.salesStaff,
-        supportStaff: values.supportStaff,
-        totalStaff: values.totalStaff,
-        gst: values.gstNo,
-        existingBusiness: values.existingBusinesses,
-        turnover: values.productServicesTurnover,
-        dealers: values.dealerNetwork,
-        association: values.association,
-        associationDetails: values.associationDetails,
-        currentTerritory: values.existingTerritory,
-        desiredTerritory: values.desiredDistrict,
-        documents: [
-          `Selected: ${values.documentsProvided.join(', ') || 'None'}`,
-          `Passport Size Photo: ${values.passportPhoto?.name || 'Not attached'}`,
-          `Aadhar Card: ${values.aadharCard?.name || 'Not attached'}`,
-          `PAN Card: ${values.panCard?.name || 'Not attached'}`,
-          `GST Certificate: ${values.gstCertificate?.name || 'Not attached'}`,
-        ].join('\n'),
-        message: values.message || 'No additional message provided.',
-      },
-      { publicKey: emailJsConfig.publicKey },
-    );
+    const recipient = getZeptoContactRecipient();
+    const htmlbody = `
+      <div style="font-family: Arial, sans-serif; color: #0f172a;">
+        <h2 style="color:#047857;margin-bottom:16px;">New Distributor Registration</h2>
+        <p><strong>Name:</strong> ${values.name}</p>
+        <p><strong>Email:</strong> ${values.emailId}</p>
+        <p><strong>Mobile:</strong> ${values.mobileNo}</p>
+        <p><strong>Whatsapp:</strong> ${values.whatsappNo || 'N/A'}</p>
+        <p><strong>Address:</strong> ${values.address}, ${values.city || ''}, ${values.district || ''}, ${values.state || ''} - ${values.pinCode || ''}</p>
+        <p><strong>Corporate Status:</strong> ${values.corporateStatus || 'Not provided'}</p>
+        <p><strong>Managing Director:</strong> ${values.managingDirector || 'Not provided'}</p>
+        <p><strong>Working Partners:</strong> ${values.workingPartners || 'Not provided'}</p>
+        <p><strong>Warehouse:</strong> ${values.warehouseAddress || 'N/A'} (Size: ${values.warehouseArea || 'N/A'})</p>
+        <p><strong>Staff:</strong> Sales ${values.salesStaff || 0}, Support ${values.supportStaff || 0}, Total ${values.totalStaff || 0}</p>
+        <p><strong>GST No:</strong> ${values.gstNo || 'Not provided'}</p>
+        <p><strong>Dealer Network:</strong> ${values.dealerNetwork || 'Not provided'}</p>
+        <p><strong>Existing Businesses:</strong><br/>${values.existingBusinesses || 'Not provided'}</p>
+        <p><strong>Product/Services & Turnover:</strong><br/>${values.productServicesTurnover || 'Not provided'}</p>
+        <p><strong>Association:</strong> ${values.association}${values.associationDetails ? ` - ${values.associationDetails}` : ''}</p>
+        <p><strong>Current Territory:</strong> ${values.existingTerritory || 'Not provided'}</p>
+        <p><strong>Desired Territory:</strong> ${values.desiredDistrict || 'Not provided'}</p>
+        <p><strong>Documents:</strong></p>
+        <ul>
+          <li>Selected: ${values.documentsProvided.join(', ') || 'None'}</li>
+          <li>Passport Photo: ${values.passportPhoto?.name || 'Not attached'}</li>
+          <li>Aadhar Card: ${values.aadharCard?.name || 'Not attached'}</li>
+          <li>PAN Card: ${values.panCard?.name || 'Not attached'}</li>
+          <li>GST Certificate: ${values.gstCertificate?.name || 'Not attached'}</li>
+        </ul>
+        <p><strong>Additional Message:</strong><br/>${values.message || 'No additional message provided.'}</p>
+      </div>
+    `;
+
+    await sendZeptoMail({
+      subject: `New Distributor Registration - ${values.name}`,
+      htmlbody,
+      to: [recipient],
+      replyTo: { address: values.emailId, name: values.name },
+    });
 
     toast.success('Distributor registration submitted successfully.');
     reset(defaultValues);
@@ -156,9 +147,11 @@ const DistributorForm = () => {
           className="space-y-8"
           onSubmit={handleSubmit(async (values) => {
             try {
-              await onSubmit(values);
-            } catch {
-              toast.error('We could not send your registration right now.');
+              const res = await onSubmit(values);
+              console.log('Distributor form sent', res);
+            } catch (error) {
+              console.error('Distributor form failed', error);
+              toast.error(error?.message || 'We could not send your registration right now.');
             }
           })}
         >
@@ -184,7 +177,7 @@ const DistributorForm = () => {
 
           <div className="flex flex-col gap-4 border-t border-slate-200 pt-6 md:flex-row md:items-center md:justify-between">
             <p className="max-w-2xl text-sm leading-6 text-slate-500">
-              This frontend flow sends application data through EmailJS. The selected file names are included in the email summary, and binary document delivery can be added later if needed.
+              This frontend flow sends application data through ZeptoMail. The selected file names are included in the email summary, and binary document delivery can be added later if needed.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button type="button" variant="outline" size="lg" onClick={previousStep} disabled={currentStep === 0 || isSubmitting}>

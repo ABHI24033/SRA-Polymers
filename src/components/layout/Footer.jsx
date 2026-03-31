@@ -58,9 +58,14 @@ const Footer = () => {
                     <div className="text-center sm:text-left">
                         <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Solutions</h3>
                         <ul className="space-y-4">
-                            {['Irrigation Systems', 'Greenhouse Films', 'Mulching Films', 'Pipes & Fittings', 'Agricultural Nets'].map((item) => (
-                                <li key={item}>
-                                    <Link to="/products" className="text-emerald-100/60 hover:text-emerald-400 font-medium transition-colors inline-block">{item}</Link>
+                            {[
+                                { name: 'Sprinklers', path: '/products/sprinklers' },
+                                { name: 'Drip Irrigation', path: '/products/drip' },
+                                { name: 'Portable HDPE Piping', path: '/products/portable-hdpe-piping' },
+                                { name: 'HDPE Pipes', path: '/products/hdpe-pipes' },
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link to={item.path} className="text-emerald-100/60 hover:text-emerald-400 font-medium transition-colors inline-block">{item.name}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -91,11 +96,11 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} SRA Polymers Pvt. Ltd.
                     </div>
                     <div className="order-1 md:order-2 flex justify-center space-x-8">
-                        <a href="#" className="text-emerald-100/40 hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="text-emerald-100/40 hover:text-white transition-colors">Terms of Service</a>
+                        <Link to="/privacy-policy" className="text-emerald-100/40 hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link to="/terms-of-service" className="text-emerald-100/40 hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                     <div className="order-3 text-emerald-100/40 text-center md:text-right">
-                        Designed for Sustainability
+                        Designed: Zeqon Technology pvt. ltd.
                     </div>
                 </div>
             </div>

@@ -12,6 +12,8 @@ import ProductDetails from './pages/ProductDetails';
 import ServiceDetails from './pages/ServiceDetails';
 import Contact from './pages/Contact';
 import Distributors from './pages/Distributors';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   useScrollToTop();
@@ -27,6 +29,8 @@ function App() {
         <Route path="/products/:slug" element={<ProductDetails />} />
         <Route path="/distributors" element={<Distributors />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
     </Layout>
   );

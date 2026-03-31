@@ -77,7 +77,7 @@ const AboutPreview = () => {
                                 <Link to="/about" className="w-full sm:w-auto px-10 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-xl hover:-translate-y-1 text-center">
                                     Learn More About Us
                                 </Link>
-                                <div className="flex items-center space-x-4">
+                                {/* <div className="flex items-center space-x-4">
                                     <div className="flex -space-x-4">
                                         {[1, 2, 3].map(i => (
                                             <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
@@ -89,7 +89,7 @@ const AboutPreview = () => {
                                         </div>
                                     </div>
                                     <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Industry Partners</span>
-                                </div>
+                                </div> */}
                             </div>
                         </motion.div>
                     </div>

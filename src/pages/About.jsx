@@ -103,10 +103,10 @@ const About = () => {
                                         <span className="text-emerald-50/40 font-bold uppercase tracking-widest text-sm">Powered by Polymers</span>
                                     </div>
 
-                                    <button className="mt-12 group flex items-center space-x-3 bg-white text-emerald-900 px-8 py-4 rounded-2xl font-black transition-all hover:bg-emerald-400 hover:text-white hover:-translate-y-1">
+                                    {/* <button className="mt-12 group flex items-center space-x-3 bg-white text-emerald-900 px-8 py-4 rounded-2xl font-black transition-all hover:bg-emerald-400 hover:text-white hover:-translate-y-1">
                                         <span>Join Our Journey</span>
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
 
