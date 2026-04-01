@@ -9,7 +9,8 @@ const About = () => {
             <section className="relative pt-48 pb-32 bg-emerald-950 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                        // src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                        src="/field_6.jpeg"
                         alt="Innovation in Polymers"
                         className="w-full h-full object-cover opacity-30"
                     />

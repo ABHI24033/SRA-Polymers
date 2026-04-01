@@ -9,7 +9,8 @@ const Hero = () => {
             {/* Dynamic Background */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop"
+                    // src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop"
+                    src="/field_2.jpeg"
                     alt="Agriculture Field"
                     className="w-full h-full object-cover opacity-60 scale-105 animate-slow-zoom"
                 />
@@ -87,8 +88,8 @@ const Hero = () => {
                     >
                         <div className="relative z-10 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1000&auto=format&fit=crop"
-                                // src="/sprinkler_prod.jpeg"
+                                // src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1000&auto=format&fit=crop"
+                                src="/sprinkles.jpeg"
                                 alt="Smart Agriculture"
                                 className="w-full aspect-square object-cover"
                             />

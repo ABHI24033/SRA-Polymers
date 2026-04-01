@@ -73,19 +73,37 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div className="text-center sm:text-left">
-                        <h3 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Get In Touch</h3>
-                        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 space-y-4">
-                            <div className="flex items-start space-x-4 text-emerald-100/60">
-                                <MapPin size={20} className="mt-1 flex-shrink-0 text-emerald-400" />
-                                <span className="text-sm leading-relaxed">SRA Polymers Pvt Ltd. <br />Simalya, Near Dhoni Farm House, Ring Road Ranchi</span>
+                        <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Get In Touch</h3>
+                        <div className="space-y-3 text-emerald-100/80 text-sm">
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=KHATA+NO+25+85+PLOT+NO+2049+2050+CHOREYA+ROAD+AMAN+NAGAR+TARANGA+CHANHO+RANCHI+JHARKHAND+835214"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start space-x-2 hover:text-emerald-200 transition-colors"
+                            >
+                                <MapPin size={18} className="mt-1 shrink-0 text-emerald-400" />
+                                <div className="leading-snug">
+                                    <span className="font-semibold text-white">Factory:</span> Choreya Rd, Aman Nagar, Taranga, Chanho, Ranchi, 835214
+                                </div>
+                            </a>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=MEENA+NIWAS+HO+SACHIN+KUMAR+JHA+Simaliya+Near+Jojo+Nagar+Naya+Toli+Ranchi+Jharkhand+835222"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start space-x-2 hover:text-emerald-200 transition-colors"
+                            >
+                                <MapPin size={18} className="mt-1 shrink-0 text-emerald-400" />
+                                <div className="leading-snug">
+                                    <span className="font-semibold text-white">Reg. Office (RAG):</span> Simaliya, Near Jojo Nagar, Naya Toli, Ranchi, 835222
+                                </div>
+                            </a>
+                            <div className="flex items-center space-x-2">
+                                <Phone size={18} className="text-emerald-400" />
+                                <span className="font-semibold text-white">+91 9304031185</span>
                             </div>
-                            <div className="flex items-center space-x-4 text-emerald-100/60">
-                                <Phone size={20} className="text-emerald-400" />
-                                <span className="text-sm font-bold text-white">+91 9304031185</span>
-                            </div>
-                            <div className="flex items-center space-x-4 text-emerald-100/60">
-                                <Mail size={20} className="text-emerald-400" />
-                                <span className="text-sm">info.srapolymer@gmail.com</span>
+                            <div className="flex items-center space-x-2">
+                                <Mail size={18} className="text-emerald-400" />
+                                <span>info.srapolymer@gmail.com</span>
                             </div>
                         </div>
                     </div>

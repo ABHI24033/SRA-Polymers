@@ -45,11 +45,25 @@ const Navbar = () => {
                                 <span>info.srapolymer@gmail.com</span>
                             </a>
                         </div>
-                        <div className="flex items-center space-x-4">
-                            <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-4 overflow-hidden">
+                            {/* <a
+                                href="https://www.google.com/maps/search/?api=1&query=KHATA+NO+25+85+PLOT+NO+2049+2050+CHOREYA+ROAD+AMAN+NAGAR+TARANGA+CHANHO+RANCHI+JHARKHAND+835214"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex min-w-0 items-center space-x-2 hover:text-emerald-400 transition-colors"
+                            >
                                 <MapPin size={14} className="text-emerald-500" />
-                                <span>Simalya, Near Dhoni Farm House, Ring Road Ranchi</span>
-                            </div>
+                                <span className="text-xs sm:text-sm font-medium min-w-0 whitespace-normal wrap-break-word">Factory: Choreya Rd, Aman Nagar, Taranga, Chanho, Ranchi, 835214</span>
+                            </a> */}
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=MEENA+NIWAS+HO+SACHIN+KUMAR+JHA+Simaliya+Near+Jojo+Nagar+Naya+Toli+Ranchi+Jharkhand+835222"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex min-w-0 items-center space-x-2 hover:text-emerald-400 transition-colors"
+                            >
+                                <MapPin size={14} className="text-emerald-500" />
+                                <span className="text-xs sm:text-sm font-medium min-w-0 whitespace-normal wrap-break-word">Registered Office: Simaliya, Near Jojo Nagar, Naya Toli, Ranchi, 835222</span>
+                            </a>
                         </div>
                     </div>
                 </div>

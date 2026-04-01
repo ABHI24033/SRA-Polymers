@@ -19,7 +19,8 @@ const AboutPreview = () => {
                         >
                             <img
                                 // src="https://images.unsplash.com/photo-1625246333195-bf404ec970z?q=80&w=1000&auto=format&fit=crop"
-                                src="/farmers.jpg"
+                                // src="/farmers.jpg"
+                                src="/field_3.jpeg"
                                 alt="SRA Polymers Innovation"
                                 className="w-full h-auto object-cover aspect-[4/5]"
                             />

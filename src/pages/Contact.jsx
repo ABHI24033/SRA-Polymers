@@ -96,41 +96,60 @@ const Contact = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-3 gap-12">
                         {/* Info Cards Column */}
-                        <div className="lg:col-span-1 space-y-8">
+                        <div className="lg:col-span-1 space-y-4">
                             {[
                                 {
-                                    icon: <Phone className="w-6 h-6" />,
+                                    icon: <Phone className="w-5 h-5" />,
                                     title: "Call Us",
-                                    detail: "+91 123 456 7890",
+                                    detail: "+91 9304031185",
+                                    link: "tel:+919304031185",
                                     desc: "Mon-Sat, 9AM to 6PM"
                                 },
                                 {
-                                    icon: <Mail className="w-6 h-6" />,
+                                    icon: <Mail className="w-5 h-5" />,
                                     title: "Email Us",
-                                    detail: "info@srapolymers.com",
+                                    detail: "info.srapolymer@gmail.com",
+                                    link: "mailto:info.srapolymer@gmail.com",
                                     desc: "Quick response within 24h"
                                 },
                                 {
-                                    icon: <MapPin className="w-6 h-6" />,
-                                    title: "Visit Us",
-                                    detail: "SRA Polymers Pvt. Ltd.",
-                                    desc: "Industrial Zone, Phase II, Sector 5"
+                                    icon: <MapPin className="w-5 h-5" />,
+                                    title: "Factory Address",
+                                    detail: "KHATA NO 25, 85, PLOT NO 2049, 2050, CHOREYA ROAD, AMAN NAGAR, TARANGA, Chanho, Ranchi, Jharkhand, 835214",
+                                    link: "https://www.google.com/maps/search/?api=1&query=KHATA+NO+25+85+PLOT+NO+2049+2050+CHOREYA+ROAD+AMAN+NAGAR+TARANGA+CHANHO+RANCHI+JHARKHAND+835214",
+                                    desc: "Open for site visits"
+                                },
+                                {
+                                    icon: <MapPin className="w-5 h-5" />,
+                                    title: "Registered Office (RAG)",
+                                    detail: "MEENA NIWAS, HO SACHIN KUMAR JHA, Simaliya, Near Jojo Nagar, Naya Toli, Ranchi, Jharkhand, 835222",
+                                    link: "https://www.google.com/maps/search/?api=1&query=MEENA+NIWAS+HO+SACHIN+KUMAR+JHA+Simaliya+Near+Jojo+Nagar+Naya+Toli+Ranchi+Jharkhand+835222",
+                                    desc: "Corporate correspondence"
                                 }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, x: -30 }}
+                                    initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:bg-emerald-600 transition-all duration-500"
+                                    transition={{ delay: i * 0.06 }}
+                                    className="flex items-start gap-4 p-5 md:p-6 bg-white border border-emerald-100 shadow-sm rounded-3xl hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300"
                                 >
-                                    <div className="w-12 h-12 bg-white text-emerald-600 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                    <div className="w-12 h-12 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center shadow-sm">
                                         {item.icon}
                                     </div>
-                                    <h3 className="text-xl font-black text-slate-900 mb-2 group-hover:text-white transition-colors">{item.title}</h3>
-                                    <p className="text-emerald-700 font-bold mb-1 group-hover:text-white transition-colors">{item.detail}</p>
-                                    <p className="text-slate-500 text-sm group-hover:text-emerald-50/70 transition-colors uppercase tracking-widest font-bold">{item.desc}</p>
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-sm font-semibold text-slate-800">{item.title}</h3>
+                                        <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block text-sm font-medium text-emerald-700 leading-snug whitespace-normal break-words hover:text-emerald-900"
+                                        >
+                                            {item.detail}
+                                        </a>
+                                        <p className="text-[11px] text-slate-500 uppercase tracking-widest mt-1">{item.desc}</p>
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
@@ -141,7 +160,7 @@ const Contact = () => {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-slate-100 relative overflow-hidden"
+                                className="bg-white rounded-[3rem] p-8 md:p-12 shadow-md border border-slate-100 relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl -mr-32 -mt-32"></div>
 
