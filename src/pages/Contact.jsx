@@ -121,7 +121,7 @@ const Contact = () => {
                                 },
                                 {
                                     icon: <MapPin className="w-5 h-5" />,
-                                    title: "Registered Office (RAG)",
+                                    title: "Registered Office",
                                     detail: "MEENA NIWAS, HO SACHIN KUMAR JHA, Simaliya, Near Jojo Nagar, Naya Toli, Ranchi, Jharkhand, 835222",
                                     link: "https://www.google.com/maps/search/?api=1&query=MEENA+NIWAS+HO+SACHIN+KUMAR+JHA+Simaliya+Near+Jojo+Nagar+Naya+Toli+Ranchi+Jharkhand+835222",
                                     desc: "Corporate correspondence"

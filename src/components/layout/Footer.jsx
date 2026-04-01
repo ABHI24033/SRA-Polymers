@@ -83,7 +83,7 @@ const Footer = () => {
                             >
                                 <MapPin size={18} className="mt-1 shrink-0 text-emerald-400" />
                                 <div className="leading-snug">
-                                    <span className="font-semibold text-white">Factory:</span> Choreya Rd, Aman Nagar, Taranga, Chanho, Ranchi, 835214
+                                    <span className="font-semibold text-white">Factory Address :</span> Choreya Rd, Aman Nagar, Taranga, Chanho, Ranchi, 835214
                                 </div>
                             </a>
                             <a
@@ -94,7 +94,7 @@ const Footer = () => {
                             >
                                 <MapPin size={18} className="mt-1 shrink-0 text-emerald-400" />
                                 <div className="leading-snug">
-                                    <span className="font-semibold text-white">Reg. Office (RAG):</span> Simaliya, Near Jojo Nagar, Naya Toli, Ranchi, 835222
+                                    <span className="font-semibold text-white">Reg. Office :</span> Simaliya, Near Jojo Nagar, Naya Toli, Ranchi, 835222
                                 </div>
                             </a>
                             <div className="flex items-center space-x-2">
@@ -118,7 +118,7 @@ const Footer = () => {
                         <Link to="/terms-of-service" className="text-emerald-100/40 hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                     <div className="order-3 text-emerald-100/40 text-center md:text-right">
-                        Designed: Zeqon Technology pvt. ltd.
+                        Designed: Zeqon Technology Pvt. Ltd.
                     </div>
                 </div>
             </div>
