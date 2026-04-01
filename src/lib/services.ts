@@ -22,7 +22,8 @@ export const services: Service[] = [
     slug: 'export',
     title: 'Export',
     heroImage:
-      'https://images.unsplash.com/photo-1530023367847-a683933f4177?q=80&w=1600&auto=format&fit=crop',
+      // 'https://images.unsplash.com/photo-1530023367847-a683933f4177?q=80&w=1600&auto=format&fit=crop',
+      '/export.jpg',
     summary:
       'International irrigation programs with localized design, training, and support across Asia, the Middle East, and Africa.',
     description: [
@@ -43,7 +44,8 @@ export const services: Service[] = [
     slug: 'subsidy',
     title: 'Subsidy',
     heroImage:
-      'https://images.unsplash.com/photo-1520671454184-dc4ac155cb5c?q=80&w=1600&auto=format&fit=crop',
+      // 'https://images.unsplash.com/photo-1520671454184-dc4ac155cb5c?q=80&w=1600&auto=format&fit=crop',
+      '/subsidy.webp',
     summary:
       'Scheme-compliant irrigation deployments with approvals, documentation, and installations aligned to government guidelines.',
     description: [
@@ -90,7 +92,8 @@ export const services: Service[] = [
     slug: 'non-subsidy',
     title: 'Non-Subsidy',
     heroImage:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop',
+      // 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop',
+      "/plant_2.jpeg",
     summary:
       'Fast, flexible irrigation projects for customers who prefer direct procurement without scheme constraints.',
     description: [
@@ -108,41 +111,48 @@ export const services: Service[] = [
         title: 'Drip In',
         images: [
           {
-            src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=600&auto=format&fit=crop',
+            // src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=600&auto=format&fit=crop',
+            src:"/pipes.jpeg",
             alt: 'Drip In coil 1',
           },
           {
-            src: 'https://images.unsplash.com/photo-1602524813303-29b0d2d0b7e8?q=80&w=600&auto=format&fit=crop',
+            // src: 'https://images.unsplash.com/photo-1602524813303-29b0d2d0b7e8?q=80&w=600&auto=format&fit=crop',
+            src: '/pipe_2.jpeg',
+            alt: 'Drip In coil 2',
+          },
+          {
+            // src: 'https://images.unsplash.com/photo-1602524813303-29b0d2d0b7e8?q=80&w=600&auto=format&fit=crop',
+            src: '/nozel.jpeg',
             alt: 'Drip In coil 2',
           },
         ],
       },
-      {
-        title: 'InDrip Lite',
-        images: [
-          {
-            src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=600&auto=format&fit=crop',
-            alt: 'InDrip Lite roll 1',
-          },
-          {
-            src: 'https://images.unsplash.com/photo-1568600891621-2b9c0b76e3c0?q=80&w=600&auto=format&fit=crop',
-            alt: 'InDrip Lite roll 2',
-          },
-        ],
-      },
-      {
-        title: 'Plain Lateral',
-        images: [
-          {
-            src: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=600&auto=format&fit=crop',
-            alt: 'Plain lateral roll 1',
-          },
-          {
-            src: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=600&auto=format&fit=crop',
-            alt: 'Plain lateral roll 2',
-          },
-        ],
-      },
+      // {
+      //   title: 'InDrip Lite',
+      //   images: [
+      //     {
+      //       src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=600&auto=format&fit=crop',
+      //       alt: 'InDrip Lite roll 1',
+      //     },
+      //     {
+      //       src: 'https://images.unsplash.com/photo-1568600891621-2b9c0b76e3c0?q=80&w=600&auto=format&fit=crop',
+      //       alt: 'InDrip Lite roll 2',
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: 'Plain Lateral',
+      //   images: [
+      //     {
+      //       src: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=600&auto=format&fit=crop',
+      //       alt: 'Plain lateral roll 1',
+      //     },
+      //     {
+      //       src: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=600&auto=format&fit=crop',
+      //       alt: 'Plain lateral roll 2',
+      //     },
+      //   ],
+      // },
     ],
   },
   {
@@ -150,7 +160,8 @@ export const services: Service[] = [
     slug: 'plantation',
     title: 'Plantation',
     heroImage:
-      'https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1600&auto=format&fit=crop',
+      // 'https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1600&auto=format&fit=crop',
+      "/field_3.jpeg",
     summary:
       'High-pressure capable sprinkler and piping systems tailored for tea, coffee, and cardamom plantations with full lifecycle support.',
     description: [
