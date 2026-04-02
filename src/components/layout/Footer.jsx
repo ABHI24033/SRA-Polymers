@@ -16,10 +16,14 @@ const Footer = () => {
                     {/* Company Info */}
                     <div className="space-y-6 text-center sm:text-left">
                         <div className="flex items-center justify-center sm:justify-start space-x-3">
-                            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-emerald-900/40">
-                                S
+                            <div className="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-emerald-100">
+                                <img
+                                    src="/maitri logo.png"
+                                    alt="Maitri logo"
+                                    className="block w-auto h-10 px-2 py-1 sm:h-11 sm:px-2.5 object-contain"
+                                />
                             </div>
-                            <span className="text-2xl font-black text-white tracking-tight">SRA <span className="text-emerald-400">Polymers</span></span>
+                            {/* <span className="text-2xl font-black text-white tracking-tight">SRA <span className="text-emerald-400">Polymers</span></span> */}
                         </div>
                         <p className="text-emerald-100/60 leading-relaxed font-medium">
                             Engineering the future of farming with advanced polymer solutions and sustainable technology for Agriculture 4.0.
@@ -103,7 +107,7 @@ const Footer = () => {
                             </div>
                             <div className="flex items-center space-x-2">
                                 <Mail size={18} className="text-emerald-400" />
-                                <span>info.srapolymer@gmail.com</span>
+                                <span>info.srapolymers@gmail.com</span>
                             </div>
                         </div>
                     </div>

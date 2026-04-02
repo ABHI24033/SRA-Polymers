@@ -23,6 +23,7 @@ const Navbar = () => {
         { name: 'About', path: '/about' },
         { name: 'Services', path: '/services' },
         { name: 'Products', path: '/products' },
+        { name: 'Gallery', path: '/gallery' },
         { name: 'Distributors', path: '/distributors' },
         { name: 'Contact', path: '/contact' },
     ];
@@ -42,7 +43,7 @@ const Navbar = () => {
                             </a>
                             <a href="mailto:info.srapolymer@gmail.com" className="flex items-center space-x-2 hover:text-emerald-400 transition-colors">
                                 <Mail size={14} className="text-emerald-500" />
-                                <span>info.srapolymer@gmail.com</span>
+                                <span>info.srapolymers@gmail.com</span>
                             </a>
                         </div>
                         <div className="flex items-center space-x-4 overflow-hidden">

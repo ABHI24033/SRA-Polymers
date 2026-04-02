@@ -108,8 +108,8 @@ const Contact = () => {
                                 {
                                     icon: <Mail className="w-5 h-5" />,
                                     title: "Email Us",
-                                    detail: "info.srapolymer@gmail.com",
-                                    link: "mailto:info.srapolymer@gmail.com",
+                                    detail: "info.srapolymers@gmail.com",
+                                    link: "mailto:info.srapolymers@gmail.com",
                                     desc: "Quick response within 24h"
                                 },
                                 {
