@@ -73,7 +73,7 @@ export const products: Product[] = [
     title: 'Drip',
     image:
       // 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop',
-      "/drip_prod.jpg",
+      "/drip_prod.png",
     shortDescription:
       'Water-efficient drip lines with pressure-compensating emitters for vegetables, orchards, and greenhouses.',
     description:

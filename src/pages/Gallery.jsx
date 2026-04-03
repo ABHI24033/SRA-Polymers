@@ -13,7 +13,7 @@ const Gallery = () => {
         { src: '/pipe_2.jpeg', alt: 'HDPE pipes', title: 'HDPE Pipes' },
         { src: '/coil_2.jpeg', alt: 'Pipe coils', title: 'Pipe Coils' },
         { src: '/sprinkler_prod.jpeg', alt: 'Sprinkler system', title: 'Sprinkler Irrigation' },
-        { src: '/drip_prod.jpg', alt: 'Drip irrigation', title: 'Drip Irrigation' },
+        { src: '/drip_prod.png', alt: 'Drip irrigation', title: 'Drip Irrigation' },
         { src: '/hdpe-coil-pipes_prod.jpg', alt: 'HDPE coil pipes', title: 'HDPE Coil Pipes' },
         { src: '/hdpe_system_prod.jpg', alt: 'HDPE system', title: 'HDPE System' },
     ];

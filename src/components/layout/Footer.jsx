@@ -31,13 +31,13 @@ const Footer = () => {
                         <div>
                             <img src='/iso-9001-logo.png' className='w-30 h-10'/>
                         </div>
-                        <div className="flex justify-center sm:justify-start space-x-4">
+                        {/* <div className="flex justify-center sm:justify-start space-x-4">
                             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                                 <a key={i} href="#" className="w-10 h-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 hover:-translate-y-1 transition-all duration-300 group">
                                     <Icon size={18} className="text-emerald-100 group-hover:text-white" />
                                 </a>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Quick Links */}
@@ -122,7 +122,7 @@ const Footer = () => {
                         <Link to="/terms-of-service" className="text-emerald-100/40 hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                     <div className="order-3 text-emerald-100/40 text-center md:text-right">
-                        Designed: Zeqon Technology Pvt. Ltd.
+                        Designed & Develoed by Zeqon Technology Pvt. Ltd.
                     </div>
                 </div>
             </div>
